@@ -46,3 +46,30 @@ The project is a work in progress and is not yet complete.
 - [ ] User following
 - [ ] User feed (posts from users you follow)
 - [ ] User flair
+
+# Reflections
+
+## Setup
+
+- Set up was fine, really no errors!
+
+## auth.js
+
+- Was stuck on this for a while, recieving an error saying "The redirect_uri is not associated with this application." I read some documentation and was starting to think it was to do with my oAuth settings. I had the callback URL as the deployment url instead of the local url, which is what I was currently working on at the time !!
+
+## Features
+
+- With this I belive the application is running with all of the basic features listed in the readme, and will now start working on the potential future features!!
+
+## Fixes
+
+- Fix page titles on post pages to match the post title ✅ ? I can't tell automatically at the beginning, but it looks done
+
+- Handle the error when you click to vote while not logged in to show a nice error message ✅
+- Added an on brand error page, with a link to the login button.
+- However, if you get redirected to this from the home page, the "didit" button will not be able to redirect you to the home page.
+  - If you get redirected to this from a post, this works fine
+
+## Future Features
+
+- Profile page: Made the link to the dynamic route, just need to fill the page.jsx

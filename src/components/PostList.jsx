@@ -32,7 +32,9 @@ export async function PostList({ currentPage = 1 }) {
               >
                 {post.title}
               </Link>
-              <p className="text-zinc-700">posted by {post.name}</p>
+              <Link href={`user/${post.name}`}>
+                <p className="text-zinc-700">posted by {post.name}</p>
+              </Link>
             </div>
           </li>
         ))}

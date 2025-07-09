@@ -68,8 +68,19 @@ The project is a work in progress and is not yet complete.
 - Handle the error when you click to vote while not logged in to show a nice error message ✅
 - Added an on brand error page, with a link to the login button.
 - However, if you get redirected to this from the home page, the "didit" button will not be able to redirect you to the home page.
+
   - If you get redirected to this from a post, this works fine
+
+- Try to make it so I can’t vote more than once (Fix could be done in the SQL with the constraints (ideally), or in-app code to check the db before adding a new row to the votes table) ✅
+
+  - Unless i'm misunderstanding, this is already being done through an if statement
+
+- Users can vote an infinite number of times on the same post. We’d like to prevent this happening. It should be enforced at the Schema level with the UNIQUE constraint but it isn’t working. We’d like you to try and fix this, either by correcting the schema (preferable) or if not by implementing the restriction in the application code when the user tries to upvote. ✅
+  - This was already implemented
 
 ## Future Features
 
-- Profile page: Made the link to the dynamic route, just need to fill the page.jsx
+- Profile page: When clicking on a post username, it will lead to their profile page that shows all of their posts made ✅
+  - I created a new component called UsePostList and adapted the code to show posts that matched the logged in users ID. I did this by passing the userId as a param on the postId dynamic page.
+  - Using the PostList as a template made it really easy, I didn't have to change much of the SQL and i also kept most of the styling!!
+  - If i have time, I'll add some additional styling.

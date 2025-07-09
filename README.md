@@ -73,5 +73,3 @@ The project is a work in progress and is not yet complete.
 ## Future Features
 
 - Profile page: Made the link to the dynamic route, just need to fill the page.jsx
-
-- Test

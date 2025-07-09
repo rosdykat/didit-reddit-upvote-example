@@ -6,7 +6,7 @@ import { POSTS_PER_PAGE } from "@/config";
 
 export async function PostList({ currentPage = 1 }) {
   const { rows: posts } =
-    await db.query(`SELECT posts.id, posts.title, posts.body, posts.created_at, users.name, 
+    await db.query(`SELECT posts.id, posts.title, posts.body, posts.user_id, posts.created_at, users.name, 
     COALESCE(SUM(votes.vote), 0) AS vote_total
      FROM posts
      JOIN users ON posts.user_id = users.id
@@ -17,12 +17,12 @@ export async function PostList({ currentPage = 1 }) {
      OFFSET ${POSTS_PER_PAGE * (currentPage - 1)}`);
 
   return (
-    <>
+    <div className="postList">
       <ul className="max-w-screen-lg mx-auto p-4 mb-4">
         {posts.map((post) => (
           <li
             key={post.id}
-            className=" py-4 flex space-x-6 hover:bg-zinc-200 rounded-lg"
+            className=" py-4 flex space-x-6 hover:bg-zinc-200 rounded-lg postBox"
           >
             <Vote postId={post.id} votes={post.vote_total} />
             <div>
@@ -32,14 +32,16 @@ export async function PostList({ currentPage = 1 }) {
               >
                 {post.title}
               </Link>
-              <Link href={`user/${post.id}`}>
+              <Link href={`user/${post.user_id}`}>
                 <p className="text-zinc-700">posted by {post.name}</p>
               </Link>
             </div>
           </li>
         ))}
       </ul>
-      <Pagination currentPage={currentPage} />
-    </>
+      <div className="page">
+        <Pagination currentPage={currentPage} />
+      </div>
+    </div>
   );
 }

@@ -15,7 +15,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} main>
         <Providers>
           <header className="border-b border-zinc-200 p-4 flex items-center shadow-lg sticky top-0 bg-white bg-opacity-65 backdrop-blur-sm">
             <Link href="/" className="text-xl">
@@ -31,7 +31,9 @@ export default async function RootLayout({ children }) {
               <UserInfo />
             </div>
           </header>
-          <main className="max-w-screen-xl lg:mx-auto">{children}</main>
+          <div className="mainBox">
+            <main className="children">{children}</main>
+          </div>
         </Providers>
       </body>
     </html>

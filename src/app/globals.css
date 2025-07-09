@@ -25,6 +25,13 @@
   }
 }
 
+body {
+  color: #272343;
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+
 .goHome {
   display: flex;
   flex-direction: column;
@@ -39,11 +46,73 @@
   box-shadow: 10px 10px rgba(0, 0, 0, 0.53);
 }
 
-.main {
+.children {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  width: auto;
+
+  height: 100vh;
+  width: 80vw;
+  background-color: white;
+  border-left: 2px dashed black;
+  border-right: 2px dashed black;
+
+  box-shadow: 6px 0px rgba(0, 0, 0, 0.53);
+}
+
+.postBox {
+  /* border: 1px solid black; */
+  margin: 1rem;
+  background-color: rgb(255, 194, 203);
+  min-width: 50vw;
+}
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+
+  border: 1px solid black;
+}
+
+.mainBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+}
+
+.individualPostBox {
+  background-color: rgb(255, 194, 203);
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.53);
+  border-radius: 20px;
+  padding: 2rem;
+  min-width: 50vw;
+}
+
+.postBodyBox {
+  background-color: white;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.53);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.commentListBox {
+  border-radius: 2rem;
+  background-color: white;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.53);
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  padding: 2rem;
 }
